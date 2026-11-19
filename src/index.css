@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --surface-base: #fff8f5;
+    --surface-card: #ffffff;
+    --surface-low: #fbf2ed;
+    --surface-muted: #f5ebe1;
+    --surface-high: #f0e6e1;
+    --on-surface: #1f1b18;
+    --on-surface-variant: #58423c;
+    --primary: #d95d39;
+    --primary-strong: #a43716;
+    --secondary: #2b8282;
+    --secondary-strong: #006a6a;
+    --tertiary: #f4a261;
+    --outline: #8b716a;
+    --outline-variant: #dfc0b7;
+  }
+
+  html {
+    font-family: "Atkinson Hyperlegible Next", "Noto Sans Tamil", system-ui, -apple-system, sans-serif;
+    background-color: var(--surface-base);
+    color: var(--on-surface);
+    scroll-behavior: smooth;
+    letter-spacing: 0.01em;
+  }
+
+  body {
+    background-color: var(--surface-base);
+    color: var(--on-surface);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+}
+
+.cushion-card {
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(217, 93, 57, 0.08);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cushion-card-interactive:hover {
+  box-shadow: 0 16px 40px rgba(217, 93, 57, 0.14);
+}
+
+.tactile-push {
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), background-color 140ms ease, box-shadow 180ms ease;
+}
+
+.tactile-push:active {
+  transform: translateY(4px);
+}
+
+@keyframes horizon-breath {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(217, 93, 57, 0.22), 0 0 0 14px rgba(217, 93, 57, 0.09);
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(217, 93, 57, 0.30), 0 0 0 18px rgba(217, 93, 57, 0.14);
+  }
+}
+
+@keyframes teal-breath {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(43, 130, 130, 0.22), 0 0 0 14px rgba(43, 130, 130, 0.10);
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(43, 130, 130, 0.32), 0 0 0 18px rgba(43, 130, 130, 0.16);
+  }
+}
+
+.breathing-ring {
+  animation: horizon-breath 4s ease-in-out infinite;
+}
+
+.breathing-ring-teal {
+  animation: teal-breath 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breathing-ring,
+  .breathing-ring-teal {
+    animation: none;
+    box-shadow: 0 0 0 6px rgba(217, 93, 57, 0.22);
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .tactile-push,
+  .cushion-card {
+    transition: none;
+  }
+}

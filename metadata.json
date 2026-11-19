@@ -1,0 +1,6 @@
+{
+  "name": "Arivu AI (அறிவு AI)",
+  "description": "A calm, accessible Tamil Nadu citizen guide matching people of all ages to 100% free government-run sports coaching, skill training centers, public libraries, and cultural art schools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
