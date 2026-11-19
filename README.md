@@ -42,20 +42,6 @@ Icons: Inline SVG Lucide-style icons
 
 Audio: Browser Speech Synthesis (ta-IN) with native rate and punctuation formatting
 
-🚀 Getting Started
-
-Clone the repository:
-
-git clone https://github.com/your-username/arivu-ai.git
-
-
-Navigate to the project directory:
-
-cd arivu-ai
-
-
-Install dependencies and run locally (or open your single-file React component in your preferred environment).
-
 📄 License
 
 This project is open-source and available under the MIT License.
